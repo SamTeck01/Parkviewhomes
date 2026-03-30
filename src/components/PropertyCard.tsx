@@ -1,4 +1,5 @@
 import { Heart, MapPin, Star, Bed, Bath } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface PropertyCardProps {
   image: string;
