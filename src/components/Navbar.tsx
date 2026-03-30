@@ -64,7 +64,6 @@ const Navbar = () => {
             ))}
             <div className="flex flex-col gap-3 pt-4">
               <button className="btn-outline-dark text-sm py-2.5">Sign In</button>
-              <button className="btn-primary text-sm py-2.5">List Property</button>
             </div>
           </div>
         </div>
