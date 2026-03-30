@@ -36,9 +36,6 @@ const Navbar = () => {
           <button className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors">
             Sign In
           </button>
-          <button className="btn-primary text-sm py-2 px-5">
-            List Property
-          </button>
         </div>
 
         {/* Mobile toggle */}
@@ -67,7 +64,6 @@ const Navbar = () => {
             ))}
             <div className="flex flex-col gap-3 pt-4">
               <button className="btn-outline-dark text-sm py-2.5">Sign In</button>
-              <button className="btn-primary text-sm py-2.5">List Property</button>
             </div>
           </div>
         </div>
