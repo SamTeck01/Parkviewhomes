@@ -62,7 +62,7 @@ const PropertyCard = ({ image, title, location, price, rating, beds, baths, dela
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
