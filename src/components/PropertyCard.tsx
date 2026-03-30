@@ -14,8 +14,9 @@ interface PropertyCardProps {
 
 const PropertyCard = ({ image, title, location, price, rating, beds, baths, delay = 0 }: PropertyCardProps) => {
   return (
-    <div
-      className="property-card group cursor-pointer opacity-0 animate-fade-up"
+    <Link
+      to="/property/1"
+      className="property-card group cursor-pointer opacity-0 animate-fade-up block"
       style={{ animationDelay: `${delay}s` }}
     >
       <div className="relative overflow-hidden rounded-lg aspect-[4/3]">
