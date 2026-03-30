@@ -36,9 +36,6 @@ const Navbar = () => {
           <button className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors">
             Sign In
           </button>
-          <button className="btn-primary text-sm py-2 px-5">
-            List Property
-          </button>
         </div>
 
         {/* Mobile toggle */}
