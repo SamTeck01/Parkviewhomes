@@ -231,7 +231,7 @@ const PropertiesListPage = () => {
 
       {/* Floating Action Button (Mobile Only) */}
       {!isSearchActive && (
-        <div className="md:hidden fixed bottom-[90px] left-1/2 -translate-x-1/2 z-40">
+        <div className="md:hidden fixed bottom-[40px] left-1/2 -translate-x-1/2 z-40">
           <button 
             onClick={() => setShowFiltersMobile(true)}
             className="bg-[#222222] text-white flex items-center gap-2 px-5 py-3.5 rounded-full font-bold shadow-lg hover:scale-105 transition-transform"
