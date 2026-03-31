@@ -21,12 +21,14 @@ const FeaturedProperties = () => {
             key={p.id}
             id={p.id}
             images={p.images}
+            videoUrl={p.videoUrl}
             title={p.title}
             location={p.location}
             price={p.price}
             rating={p.rating}
             beds={p.beds}
             baths={p.baths}
+            amenities={p.amenities}
             delay={0.1 + i * 0.1}
           />
         ))}

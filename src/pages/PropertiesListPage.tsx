@@ -209,12 +209,14 @@ const PropertiesListPage = () => {
               key={p.id}
               id={p.id}
               images={p.images}
+              videoUrl={p.videoUrl}
               title={p.title}
               location={p.location}
               price={p.price}
               rating={p.rating}
               beds={p.beds}
               baths={p.baths}
+              amenities={p.amenities}
               delay={0.05 * i}
             />
           ))}

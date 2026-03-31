@@ -110,6 +110,8 @@ const PropertyDetail = () => {
   }
 
   const images = property.images;
+  const videoUrl = property.videoUrl;
+
   const nights = checkIn && checkOut ? differenceInDays(checkOut, checkIn) : 0;
   const subtotal = nights > 0 ? nights * property.price : property.price;
   const cleaningFee = nights > 0 ? 15000 : 0;
@@ -142,6 +144,15 @@ const PropertyDetail = () => {
           {images.slice(1, 5).map((img, i) => (
             <div key={i} className={`relative overflow-hidden cursor-pointer group ${i === 1 ? "rounded-tr-lg" : ""} ${i === 3 ? "rounded-br-lg" : ""}`}>
               <img src={img} alt={`View ${i + 2}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+              {/* Video Overlay on the last image slot (if video exists) */}
+              {i === 3 && videoUrl && (
+                <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-center text-white transition-opacity duration-300 hover:bg-black/40">
+                   <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center mb-2 bg-white/10 backdrop-blur-sm">
+                      <ChevronRight className="fill-white translate-x-0.5" size={24} />
+                   </div>
+                   <span className="text-[10px] font-bold uppercase tracking-widest">Watch video tour</span>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -150,9 +161,16 @@ const PropertyDetail = () => {
         <div className="md:hidden relative w-full aspect-[4/3] overflow-hidden bg-muted group">
           <div className="overflow-hidden h-full" ref={emblaRef}>
             <div className="flex h-full">
+               {/* Insert video as the second slide if available */}
+               {videoUrl && (
+                 <div className="flex-[0_0_100%] min-w-0 h-full relative">
+                    <video src={videoUrl} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                    <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">Video Tour</div>
+                 </div>
+               )}
                {images.map((img, i) => (
                  <div key={i} className="flex-[0_0_100%] min-w-0 h-full relative">
-                   <img src={img} className="w-full h-full object-cover" alt="Property view" />
+                    <img src={img} className="w-full h-full object-cover" alt="Property view" />
                  </div>
                ))}
             </div>
