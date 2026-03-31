@@ -10,9 +10,12 @@ const AdminDashboard = () => {
         <div className="flex-1 flex flex-col min-w-0">
           <header className="h-14 flex items-center border-b border-border px-4 bg-background/80 backdrop-blur-md sticky top-0 z-30">
             <SidebarTrigger className="mr-4" />
-            <span className="text-display text-lg font-heading tracking-tight">
-              Vemu<span className="text-amber">.</span>Admin
-            </span>
+            <div className="flex items-center gap-3 border-l-2 border-border/40 pl-4 h-8 ml-2">
+              <span className="text-[13px] md:text-[14px] font-bold leading-[1.1] tracking-wide uppercase text-foreground">
+                Vemu<br/>Homes
+              </span>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground bg-muted px-2 py-0.5 rounded-sm">Admin</span>
+            </div>
           </header>
           <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-auto">
             <Outlet />

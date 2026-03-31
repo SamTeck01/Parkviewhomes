@@ -20,7 +20,7 @@ const AboutPage = () => {
         <img src={heroImg} alt="About Vemu Homes" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
         <div className="relative z-10 section-pad pb-10 md:pb-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber mb-2 opacity-0 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2 opacity-0 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Our Story
           </p>
           <h1 className="text-display text-4xl md:text-6xl text-primary-foreground opacity-0 animate-fade-up" style={{ animationDelay: "0.25s" }}>
@@ -49,7 +49,7 @@ const AboutPage = () => {
       {/* Values */}
       <section className="section-pad py-16 md:py-24 bg-secondary noise-bg">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber mb-2">Why Vemu</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">Why Vemu</p>
           <h2 className="text-display text-2xl md:text-4xl mb-12">What sets us apart</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
             {values.map((v, i) => (
@@ -69,13 +69,13 @@ const AboutPage = () => {
       <section className="section-pad py-16 md:py-24">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-4xl mx-auto">
           {[
-            { num: "50+", label: "Premium Properties" },
+            { num: "50+", label: "Premium Shortlets" },
             { num: "2,000+", label: "Happy Guests" },
             { num: "4.8", label: "Average Rating" },
             { num: "6", label: "Lagos Locations" },
           ].map((s) => (
             <div key={s.label}>
-              <p className="text-display text-3xl md:text-4xl text-amber">{s.num}</p>
+              <p className="text-display text-3xl md:text-4xl text-accent font-extrabold">{s.num}</p>
               <p className="text-xs text-muted-foreground mt-1">{s.label}</p>
             </div>
           ))}

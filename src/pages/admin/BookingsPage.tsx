@@ -38,8 +38,8 @@ const initialBookings: Booking[] = [
 
 const statusColors: Record<Booking["status"], string> = {
   Confirmed: "bg-accent/10 text-accent border-accent/20",
-  Pending: "bg-amber/10 text-amber border-amber/20",
-  "Checked In": "bg-olive/10 text-olive border-olive/20",
+  Pending: "bg-muted text-foreground border-border",
+  "Checked In": "bg-foreground text-background border-border",
   Completed: "bg-muted text-muted-foreground border-border",
   Cancelled: "bg-destructive/10 text-destructive border-destructive/20",
 };
@@ -87,9 +87,9 @@ const BookingsPage = () => {
           { label: "Pending", value: summaryStats.pending },
           { label: "Completed", value: summaryStats.completed },
         ].map((s) => (
-          <Card key={s.label} className="bg-card border-border">
+          <Card key={s.label} className="bg-card border border-border/60 shadow-sm rounded-lg">
             <CardContent className="p-4 text-center">
-              <p className="text-xs text-muted-foreground uppercase tracking-wider">{s.label}</p>
+              <p className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest">{s.label}</p>
               <p className="text-display text-2xl mt-1">{s.value}</p>
             </CardContent>
           </Card>
@@ -118,55 +118,55 @@ const BookingsPage = () => {
       </div>
 
       {/* Bookings Table */}
-      <Card className="bg-card border-border">
+      <Card className="bg-card border border-border/60 shadow-sm rounded-lg">
         <CardContent className="p-0">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left p-4 text-xs text-muted-foreground uppercase tracking-wider font-medium">ID</th>
-                  <th className="text-left p-4 text-xs text-muted-foreground uppercase tracking-wider font-medium">Guest</th>
-                  <th className="text-left p-4 text-xs text-muted-foreground uppercase tracking-wider font-medium hidden md:table-cell">Property</th>
-                  <th className="text-left p-4 text-xs text-muted-foreground uppercase tracking-wider font-medium hidden lg:table-cell">Dates</th>
-                  <th className="text-left p-4 text-xs text-muted-foreground uppercase tracking-wider font-medium">Total</th>
-                  <th className="text-left p-4 text-xs text-muted-foreground uppercase tracking-wider font-medium">Status</th>
-                  <th className="text-left p-4 text-xs text-muted-foreground uppercase tracking-wider font-medium">Action</th>
+              <thead className="bg-muted/30">
+                <tr className="border-b border-border/40">
+                  <th className="text-left p-4 px-5 text-[11px] text-muted-foreground uppercase tracking-wider font-bold">ID</th>
+                  <th className="text-left p-4 px-5 text-[11px] text-muted-foreground uppercase tracking-wider font-bold">Guest</th>
+                  <th className="text-left p-4 px-5 text-[11px] text-muted-foreground uppercase tracking-wider font-bold hidden md:table-cell">Property</th>
+                  <th className="text-left p-4 px-5 text-[11px] text-muted-foreground uppercase tracking-wider font-bold hidden lg:table-cell">Dates</th>
+                  <th className="text-left p-4 px-5 text-[11px] text-muted-foreground uppercase tracking-wider font-bold">Total</th>
+                  <th className="text-left p-4 px-5 text-[11px] text-muted-foreground uppercase tracking-wider font-bold">Status</th>
+                  <th className="text-left p-4 px-5 text-[11px] text-muted-foreground uppercase tracking-wider font-bold">Action</th>
                 </tr>
               </thead>
               <tbody>
                 {filtered.map((booking) => (
-                  <tr key={booking.id} className="border-b border-border/50 last:border-0 hover:bg-muted/30 transition-colors">
-                    <td className="p-4 font-mono text-xs text-muted-foreground">{booking.id}</td>
-                    <td className="p-4">
-                      <p className="font-medium">{booking.guest}</p>
+                  <tr key={booking.id} className="border-b border-border/40 last:border-0 hover:bg-muted/10 transition-colors">
+                    <td className="p-4 px-5 font-mono text-xs text-muted-foreground">{booking.id}</td>
+                    <td className="p-4 px-5">
+                      <p className="font-semibold text-[14px]">{booking.guest}</p>
                       <p className="text-xs text-muted-foreground">{booking.email}</p>
                     </td>
-                    <td className="p-4 text-muted-foreground hidden md:table-cell">{booking.property}</td>
-                    <td className="p-4 text-muted-foreground hidden lg:table-cell">
-                      <p className="text-xs">{booking.checkIn}</p>
-                      <p className="text-xs">→ {booking.checkOut}</p>
-                      <p className="text-xs text-accent">{booking.nights} nights</p>
+                    <td className="p-4 px-5 text-muted-foreground hidden md:table-cell text-[14px]">{booking.property}</td>
+                    <td className="p-4 px-5 text-muted-foreground hidden lg:table-cell">
+                      <p className="text-[13px]">{booking.checkIn}</p>
+                      <p className="text-[13px]">→ {booking.checkOut}</p>
+                      <p className="text-[12px] font-semibold text-foreground mt-1">{booking.nights} nights</p>
                     </td>
-                    <td className="p-4 font-semibold">{booking.total}</td>
-                    <td className="p-4">
-                      <span className={`inline-flex px-2 py-0.5 rounded-sm text-xs font-medium border ${statusColors[booking.status]}`}>
+                    <td className="p-4 px-5 font-bold text-[14px]">{booking.total}</td>
+                    <td className="p-4 px-5">
+                      <span className={`inline-flex px-2.5 py-1 rounded-[3px] text-[10px] uppercase font-bold tracking-widest border ${statusColors[booking.status]}`}>
                         {booking.status}
                       </span>
                     </td>
-                    <td className="p-4">
+                    <td className="p-4 px-5">
                       {booking.status === "Pending" && (
-                        <Button size="sm" variant="outline" className="text-xs h-7 rounded-sm" onClick={() => updateStatus(booking.id, "Confirmed")}>
+                        <Button size="sm" variant="outline" className="text-[11px] h-7 rounded-sm border-foreground text-foreground px-4 font-bold uppercase tracking-wider" onClick={() => updateStatus(booking.id, "Confirmed")}>
                           Confirm
                         </Button>
                       )}
                       {booking.status === "Confirmed" && (
-                        <Button size="sm" variant="outline" className="text-xs h-7 rounded-sm" onClick={() => updateStatus(booking.id, "Checked In")}>
+                        <Button size="sm" variant="outline" className="text-[11px] h-7 rounded-sm border-foreground bg-foreground text-background px-4 font-bold uppercase tracking-wider" onClick={() => updateStatus(booking.id, "Checked In")}>
                           Check In
                         </Button>
                       )}
                       {booking.status === "Checked In" && (
-                        <Button size="sm" variant="outline" className="text-xs h-7 rounded-sm" onClick={() => updateStatus(booking.id, "Completed")}>
-                          Complete
+                        <Button size="sm" variant="outline" className="text-[11px] h-7 rounded-sm border-foreground text-foreground px-4 font-bold uppercase tracking-wider" onClick={() => updateStatus(booking.id, "Completed")}>
+                          Finish
                         </Button>
                       )}
                     </td>

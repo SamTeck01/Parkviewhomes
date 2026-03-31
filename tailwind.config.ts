@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['DM Serif Display', 'serif'],
-        body: ['Outfit', 'sans-serif'],
+        heading: ['Inter', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -66,7 +66,10 @@ export default {
           sand: "hsl(var(--warm-sand))",
         },
         charcoal: "hsl(var(--charcoal))",
-        amber: "hsl(var(--amber))",
+        vemu: {
+          blue: "#001F60",
+          black: "#000000",
+        },
         olive: "hsl(var(--olive))",
       },
       borderRadius: {

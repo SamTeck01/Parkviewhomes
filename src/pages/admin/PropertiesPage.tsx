@@ -34,7 +34,7 @@ interface Property {
   location: string;
   price: string;
   bedrooms: number;
-  status: "Active" | "Draft" | "Inactive";
+  status: "Available" | "Occupied" | "Maintenance";
   image: string;
   occupancy: number;
   lat: number;
@@ -42,12 +42,12 @@ interface Property {
 }
 
 const initialProperties: Property[] = [
-  { id: "1", title: "Lekki Pearl Suite", location: "Lekki Phase 1, Lagos", price: "₦85,000", bedrooms: 2, status: "Active", image: "/placeholder.svg", occupancy: 78, lat: 6.4474, lng: 3.4734 },
-  { id: "2", title: "VI Luxury Flat", location: "Victoria Island, Lagos", price: "₦120,000", bedrooms: 3, status: "Active", image: "/placeholder.svg", occupancy: 92, lat: 6.4281, lng: 3.4219 },
-  { id: "3", title: "Ikoyi Grand Villa", location: "Ikoyi, Lagos", price: "₦250,000", bedrooms: 5, status: "Active", image: "/placeholder.svg", occupancy: 65, lat: 6.4511, lng: 3.4353 },
-  { id: "4", title: "Banana Island Penthouse", location: "Banana Island, Lagos", price: "₦450,000", bedrooms: 4, status: "Draft", image: "/placeholder.svg", occupancy: 0, lat: 6.4598, lng: 3.4254 },
-  { id: "5", title: "Ikeja City Apartment", location: "Ikeja GRA, Lagos", price: "₦55,000", bedrooms: 1, status: "Active", image: "/placeholder.svg", occupancy: 85, lat: 6.5833, lng: 3.3458 },
-  { id: "6", title: "Ajah Beach House", location: "Ajah, Lagos", price: "₦95,000", bedrooms: 3, status: "Inactive", image: "/placeholder.svg", occupancy: 0, lat: 6.4698, lng: 3.5852 },
+  { id: "1", title: "Lekki Pearl Suite", location: "Lekki Phase 1, Lagos", price: "₦85,000", bedrooms: 2, status: "Available", image: "/placeholder.svg", occupancy: 78, lat: 6.4474, lng: 3.4734 },
+  { id: "2", title: "VI Luxury Flat", location: "Victoria Island, Lagos", price: "₦120,000", bedrooms: 3, status: "Occupied", image: "/placeholder.svg", occupancy: 92, lat: 6.4281, lng: 3.4219 },
+  { id: "3", title: "Ikoyi Grand Villa", location: "Ikoyi, Lagos", price: "₦250,000", bedrooms: 5, status: "Available", image: "/placeholder.svg", occupancy: 65, lat: 6.4511, lng: 3.4353 },
+  { id: "4", title: "Banana Island Penthouse", location: "Banana Island, Lagos", price: "₦450,000", bedrooms: 4, status: "Maintenance", image: "/placeholder.svg", occupancy: 0, lat: 6.4598, lng: 3.4254 },
+  { id: "5", title: "Ikeja City Apartment", location: "Ikeja GRA, Lagos", price: "₦55,000", bedrooms: 1, status: "Occupied", image: "/placeholder.svg", occupancy: 85, lat: 6.5833, lng: 3.3458 },
+  { id: "6", title: "Ajah Beach House", location: "Ajah, Lagos", price: "₦95,000", bedrooms: 3, status: "Maintenance", image: "/placeholder.svg", occupancy: 0, lat: 6.4698, lng: 3.5852 },
 ];
 
 const PropertiesPage = () => {
@@ -78,7 +78,7 @@ const PropertiesPage = () => {
       location: form.get("location") as string,
       price: `₦${Number(form.get("price")).toLocaleString()}`,
       bedrooms: Number(form.get("bedrooms")),
-      status: "Draft",
+      status: "Available",
       image: "/placeholder.svg",
       occupancy: 0,
       lat: Number(form.get("lat")) || 6.45,
@@ -160,9 +160,9 @@ const PropertiesPage = () => {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Status</SelectItem>
-            <SelectItem value="Active">Active</SelectItem>
-            <SelectItem value="Draft">Draft</SelectItem>
-            <SelectItem value="Inactive">Inactive</SelectItem>
+            <SelectItem value="Available">Available</SelectItem>
+            <SelectItem value="Occupied">Occupied</SelectItem>
+            <SelectItem value="Maintenance">Maintenance</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -173,10 +173,10 @@ const PropertiesPage = () => {
           <Card key={property.id} className="bg-card border-border overflow-hidden">
             <div className="h-40 bg-muted relative">
               <img src={property.image} alt={property.title} className="w-full h-full object-cover" />
-              <span className={`absolute top-3 left-3 px-2 py-0.5 rounded-sm text-xs font-medium ${
-                property.status === "Active" ? "bg-accent/90 text-accent-foreground" :
-                property.status === "Draft" ? "bg-muted text-muted-foreground" :
-                "bg-destructive/90 text-destructive-foreground"
+              <span className={`absolute top-3 left-3 px-2.5 py-1 rounded-[3px] uppercase tracking-widest text-[10px] font-bold border ${
+                property.status === "Available" ? "bg-accent/10 border-accent/20 text-accent" :
+                property.status === "Occupied" ? "bg-muted border-border text-foreground" :
+                "bg-destructive/10 border-destructive/20 text-destructive"
               }`}>
                 {property.status}
               </span>

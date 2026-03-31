@@ -25,10 +25,10 @@ const ContactPage = () => {
       <div className="pt-24 md:pt-32 section-pad pb-16">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber mb-2">Get in Touch</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">Get in Touch</p>
             <h1 className="text-display text-3xl md:text-5xl mb-3">Contact Us</h1>
             <p className="text-muted-foreground text-sm max-w-lg">
-              Have a question about a property, need help with a booking, or want to partner with us? We'd love to hear from you.
+              Have a question about a shortlet, need help with a booking, or want to partner with us? We'd love to hear from you.
             </p>
           </div>
 

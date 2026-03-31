@@ -12,7 +12,7 @@ const locations = [
 const Locations = () => {
   return (
     <section id="locations" className="section-pad py-16 md:py-24">
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber mb-2">Top Locations</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">Top Locations</p>
       <h2 className="text-display text-3xl md:text-4xl lg:text-5xl mb-10 md:mb-14">Popular destinations</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">

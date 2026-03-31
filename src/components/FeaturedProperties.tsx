@@ -7,10 +7,10 @@ const FeaturedProperties = () => {
     <section id="properties" className="section-pad py-16 md:py-24">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14 gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber mb-2">Curated Selection</p>
-          <h2 className="text-display text-3xl md:text-4xl lg:text-5xl leading-tight">New properties</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">Curated Selection</p>
+          <h2 className="text-display text-3xl md:text-4xl lg:text-5xl leading-tight">Featured Stays</h2>
         </div>
-        <Link to="/properties" className="text-sm font-medium text-foreground underline underline-offset-4 hover:text-amber transition-colors">
+        <Link to="/properties" className="text-sm font-medium text-foreground underline underline-offset-4 hover:text-accent transition-colors">
           View all shortlets →
         </Link>
       </div>
@@ -20,7 +20,7 @@ const FeaturedProperties = () => {
           <PropertyCard
             key={p.id}
             id={p.id}
-            image={p.images[0]}
+            images={p.images}
             title={p.title}
             location={p.location}
             price={p.price}

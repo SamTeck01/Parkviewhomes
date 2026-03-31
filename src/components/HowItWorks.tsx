@@ -23,7 +23,7 @@ const HowItWorks = () => {
     <section className="section-pad py-16 md:py-24 bg-secondary noise-bg" id="about">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber mb-2">How It Works</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">How It Works</p>
           <h2 className="text-display text-3xl md:text-4xl lg:text-5xl">
             See what we offer<br className="hidden md:block" /> and how it works
           </h2>
