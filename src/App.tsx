@@ -5,6 +5,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import PropertyDetail from "./pages/PropertyDetail.tsx";
+import PropertiesListPage from "./pages/PropertiesListPage.tsx";
+import BookingConfirmation from "./pages/BookingConfirmation.tsx";
+import AboutPage from "./pages/AboutPage.tsx";
+import ContactPage from "./pages/ContactPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { lazy, Suspense } from "react";
 
@@ -25,14 +29,17 @@ const App = () => (
         <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-muted-foreground">Loading...</div>}>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/properties" element={<PropertiesListPage />} />
             <Route path="/property/:id" element={<PropertyDetail />} />
+            <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/admin" element={<AdminDashboard />}>
               <Route index element={<OverviewPage />} />
               <Route path="properties" element={<PropertiesPage />} />
               <Route path="bookings" element={<BookingsPage />} />
               <Route path="analytics" element={<AnalyticsPage />} />
             </Route>
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

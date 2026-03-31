@@ -9,16 +9,31 @@ const Footer = () => {
             Vemu<span className="text-amber">.</span>Homes
           </Link>
           <p className="text-xs text-muted-foreground mt-3 leading-relaxed max-w-xs">
-            We help you discover and stay in the world's finest shortlet apartments.
+            Premium shortlet apartments across Lagos's finest neighborhoods.
           </p>
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold mb-4">Company</h4>
+          <h4 className="text-sm font-semibold mb-4">Explore</h4>
           <ul className="space-y-2.5">
-            {["About", "Careers", "Blog", "Press"].map((l) => (
+            {[
+              { label: "All Shortlets", to: "/properties" },
+              { label: "About Us", to: "/about" },
+              { label: "Contact", to: "/contact" },
+            ].map((l) => (
+              <li key={l.label}>
+                <Link to={l.to} className="text-xs text-muted-foreground hover:text-foreground transition-colors">{l.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-sm font-semibold mb-4">Locations</h4>
+          <ul className="space-y-2.5">
+            {["Victoria Island", "Lekki", "Ikoyi", "Banana Island", "Ikeja"].map((l) => (
               <li key={l}>
-                <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">{l}</a>
+                <Link to={`/properties?location=${encodeURIComponent(l)}`} className="text-xs text-muted-foreground hover:text-foreground transition-colors">{l}</Link>
               </li>
             ))}
           </ul>
@@ -27,20 +42,13 @@ const Footer = () => {
         <div>
           <h4 className="text-sm font-semibold mb-4">Support</h4>
           <ul className="space-y-2.5">
-            {["Help Center", "Safety", "Cancellation", "COVID-19"].map((l) => (
-              <li key={l}>
-                <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">{l}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-semibold mb-4">Hosting</h4>
-          <ul className="space-y-2.5">
-            {["List Property", "Resources", "Community", "Guidelines"].map((l) => (
-              <li key={l}>
-                <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">{l}</a>
+            {[
+              { label: "Help Center", to: "/contact" },
+              { label: "Cancellation Policy", to: "/contact" },
+              { label: "Safety", to: "/about" },
+            ].map((l) => (
+              <li key={l.label}>
+                <Link to={l.to} className="text-xs text-muted-foreground hover:text-foreground transition-colors">{l.label}</Link>
               </li>
             ))}
           </ul>
