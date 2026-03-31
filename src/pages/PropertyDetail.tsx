@@ -6,6 +6,7 @@ import {
   Heart, Share2, MapPin, Bed, Bath, Maximize, ChevronLeft, ChevronRight,
   Star, Wifi, Car, Wind, Tv, UtensilsCrossed, ShieldCheck, Phone
 } from "lucide-react";
+import PropertyMap from "@/components/PropertyMap";
 import property1 from "@/assets/property-1.jpg";
 import property2 from "@/assets/property-2.jpg";
 import property3 from "@/assets/property-3.jpg";
@@ -160,7 +161,7 @@ const PropertyDetail = () => {
             </div>
 
             {/* House rules */}
-            <div>
+            <div className="mb-8 pb-8 border-b border-border">
               <h2 className="text-display text-xl md:text-2xl mb-6">House rules</h2>
               <div className="space-y-3 text-sm text-muted-foreground">
                 <p>Check-in: 2:00 PM — Check-out: 12:00 PM</p>
@@ -168,6 +169,13 @@ const PropertyDetail = () => {
                 <p>No parties or events</p>
                 <p>Pets allowed on request</p>
               </div>
+            </div>
+
+            {/* Location map */}
+            <div>
+              <h2 className="text-display text-xl md:text-2xl mb-2">Location</h2>
+              <p className="text-sm text-muted-foreground mb-4">Victoria Island, Lagos, Nigeria</p>
+              <PropertyMap lat={6.4281} lng={3.4219} title="Skyline Loft Suite" height="h-[320px]" />
             </div>
           </div>
 
