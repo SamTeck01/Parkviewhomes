@@ -1,5 +1,4 @@
-import { lazy, Suspense, memo } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
+import { memo } from "react";
 
 interface PropertyMapProps {
   lat: number;
@@ -9,13 +8,21 @@ interface PropertyMapProps {
   height?: string;
 }
 
-const LazyMapInner = lazy(() => import("./PropertyMapInner"));
-
 const PropertyMap = memo(({ lat, lng, title, className = "", height = "h-[300px]" }: PropertyMapProps) => {
+  const src = `https://www.openstreetmap.org/export/embed.html?bbox=${lng - 0.008}%2C${lat - 0.005}%2C${lng + 0.008}%2C${lat + 0.005}&layer=mapnik&marker=${lat}%2C${lng}`;
+
   return (
-    <Suspense fallback={<Skeleton className={`${height} w-full rounded-lg`} />}>
-      <LazyMapInner lat={lat} lng={lng} title={title} className={className} height={height} />
-    </Suspense>
+    <div className={`${height} w-full rounded-lg overflow-hidden border border-border ${className}`}>
+      <iframe
+        title={title || "Property location"}
+        src={src}
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        loading="lazy"
+        referrerPolicy="no-referrer"
+      />
+    </div>
   );
 });
 
