@@ -1,3 +1,4 @@
+import logo from "@/assets/Vemo Homes logo.png";
 import { Link } from "react-router-dom";
 import { Instagram, Twitter, Facebook, Shield } from "lucide-react";
 
@@ -6,9 +7,17 @@ const Footer = () => {
     <footer className="section-pad py-12 md:py-16 border-t border-border bg-white" id="contact">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
         <div className="col-span-2 md:col-span-1">
-          <Link to="/" className="text-xl font-extrabold tracking-tighter uppercase flex flex-col leading-none">
-            <span>Vemu</span>
-            <span>Homes<span className="text-accent">.</span></span>
+          <Link to="/" className="flex items-center mb-6">
+            <img 
+              src={logo} 
+              alt="Vemu Homes" 
+              className="h-14 md:h-20 w-auto object-contain -ml-2" 
+            />
+
+            <div className="text-[13px] md:text-[14px] font-bold leading-[1.1] tracking-wide uppercase flex flex-col items-start text-foreground">
+              <span>Vemu</span>
+              <span>Homes</span>
+            </div>
           </Link>
           <p className="text-xs text-muted-foreground mt-4 leading-relaxed max-w-[200px]">
             Premium shortlet apartments across Lagos's finest neighborhoods.

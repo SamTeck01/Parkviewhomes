@@ -15,6 +15,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { useToast } from "@/hooks/use-toast";
 import { format, differenceInDays, addDays } from "date-fns";
 import useEmblaCarousel from "embla-carousel-react";
+import logo from "@/assets/Vemo Homes logo.png";
 
 const amenityIcons: Record<string, React.ElementType> = {
   "High-speed WiFi": Wifi,
@@ -133,7 +134,7 @@ const PropertyDetail = () => {
       <Navbar />
 
       {/* Gallery */}
-      <section className="pt-16 md:pt-20">
+      <section className="pt-20">
         <div className="hidden md:grid grid-cols-4 grid-rows-2 gap-1.5 h-[480px] lg:h-[540px] section-pad">
           <div className="col-span-2 row-span-2 relative overflow-hidden rounded-l-lg cursor-pointer group">
             <img src={images[0]} alt="Main view" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -349,10 +350,12 @@ const PropertyDetail = () => {
             </div>
 
             <div className="border border-border rounded-lg p-5 flex items-center gap-4 bg-card">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-heading text-lg shrink-0">V</div>
+              <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white border border-border shrink-0">
+                 <img src={logo} alt="Vemu Homes Logo" className="w-full h-full object-cover p-1" />
+              </div>
               <div className="flex-1 min-w-0">
                 <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Property managed by</p>
-                <p className="text-sm font-semibold">Vemu Homes <span className="text-accent">★</span></p>
+                <p className="text-sm font-bold flex items-center gap-1.5">Vemu Homes <span className="text-accent">★</span></p>
               </div>
               <Link to="/contact" className="btn-primary text-xs py-2 px-4 rounded-md whitespace-nowrap">Contact</Link>
             </div>

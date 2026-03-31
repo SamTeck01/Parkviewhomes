@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Menu, X, ChevronDown, CalendarDays } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
+import logo from "@/assets/Vemo Homes logo.png";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -22,8 +24,13 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border/40">
       <nav className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 flex items-center justify-between h-20 md:h-[88px]">
-        {/* Left: Stacked Logo perfectly matching HORIZON ESTATE style */}
-        <Link to="/" className="flex items-center group">
+        {/* Left: Official Logo Branding */}
+        <Link to="/" className="flex items-center group flex-row">
+          <img 
+            src={logo} 
+            alt="Vemu Homes" 
+            className="h-12 md:h-16 w-auto object-contain transition-transform group-hover:scale-105" 
+          />
           <div className="text-[13px] md:text-[14px] font-bold leading-[1.1] tracking-wide uppercase flex flex-col items-start pr-12 text-foreground">
             <span>Vemu</span>
             <span>Homes</span>
@@ -84,11 +91,15 @@ const Navbar = () => {
       {open && (
         <div className="fixed inset-0 top-0 left-0 w-full h-[100dvh] bg-background z-[100] flex flex-col animate-in fade-in duration-300">
           <div className="px-6 h-20 md:h-[88px] flex items-center justify-between border-b border-border/40">
-             <div className="text-[13px] md:text-[14px] font-bold leading-[1.1] tracking-wide uppercase flex flex-col items-start text-foreground">
+            <Link to="/" onClick={() => setOpen(false)} className="flex items-center group flex-row">
+              <img src={logo} alt="Vemu Homes" className="h-10 w-auto object-contain" />
+
+              <div className="text-[13px] md:text-[14px] font-bold leading-[1.1] tracking-wide uppercase flex flex-col items-start text-foreground">
                 <span>Vemu</span>
                 <span>Homes</span>
               </div>
-             <button onClick={() => setOpen(false)} className="p-2 text-foreground">
+            </Link>
+            <button onClick={() => setOpen(false)} className="p-2 text-foreground">
               <X size={28} />
             </button>
           </div>
