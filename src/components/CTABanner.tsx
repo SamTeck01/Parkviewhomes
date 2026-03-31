@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CTABanner = () => {
   return (
     <section className="section-pad py-16 md:py-24">
@@ -7,16 +9,16 @@ const CTABanner = () => {
             Smart selection of premium shortlets
           </h2>
           <p className="text-sm md:text-base text-primary-foreground/60">
-            List your property with Vemu Homes and reach thousands of guests looking for quality short stays.
+            Discover handpicked luxury short-stay apartments across Lagos's most sought-after neighborhoods.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-          <button className="btn-accent text-sm py-3 px-8 rounded-md whitespace-nowrap">
+          <Link to="/properties" className="btn-accent text-sm py-3 px-8 rounded-md whitespace-nowrap text-center">
             Find a shortlet
-          </button>
-          <button className="border border-primary-foreground/30 text-primary-foreground text-sm py-3 px-8 rounded-md whitespace-nowrap hover:bg-primary-foreground/10 transition-colors">
-            List your property
-          </button>
+          </Link>
+          <Link to="/contact" className="border border-primary-foreground/30 text-primary-foreground text-sm py-3 px-8 rounded-md whitespace-nowrap hover:bg-primary-foreground/10 transition-colors text-center">
+            Contact us
+          </Link>
         </div>
       </div>
     </section>
