@@ -6,6 +6,7 @@ import {
   Heart, Share2, MapPin, Bed, Bath, Maximize, ChevronLeft, ChevronRight,
   Star, Wifi, Car, Wind, Tv, UtensilsCrossed, ShieldCheck, Phone
 } from "lucide-react";
+import PropertyMap from "@/components/PropertyMap";
 import property1 from "@/assets/property-1.jpg";
 import property2 from "@/assets/property-2.jpg";
 import property3 from "@/assets/property-3.jpg";
