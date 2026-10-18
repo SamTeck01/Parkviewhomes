@@ -12,7 +12,7 @@ const AdminDashboard = () => {
             <SidebarTrigger className="mr-4" />
             <div className="flex items-center gap-3 border-l-2 border-border/40 pl-4 h-8 ml-2">
               <span className="text-[13px] md:text-[14px] font-bold leading-[1.1] tracking-wide uppercase text-foreground">
-                Vemu<br/>Homes
+                Parkview<br/>Realty
               </span>
               <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground bg-muted px-2 py-0.5 rounded-sm">Admin</span>
             </div>

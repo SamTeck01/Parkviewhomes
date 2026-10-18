@@ -10,6 +10,9 @@ import BookingConfirmation from "./pages/BookingConfirmation.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import ProductsPage from "./pages/ProductsPage.tsx";
+import BookInspectionPage from "./pages/BookInspectionPage.tsx";
+import UpdatesPage from "./pages/UpdatesPage.tsx";
 import { lazy, Suspense } from "react";
 
 const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard.tsx"));
@@ -32,6 +35,9 @@ const App = () => (
             <Route path="/properties" element={<PropertiesListPage />} />
             <Route path="/property/:id" element={<PropertyDetail />} />
             <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/book-inspection" element={<BookInspectionPage />} />
+            <Route path="/updates" element={<UpdatesPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/admin" element={<AdminDashboard />}>

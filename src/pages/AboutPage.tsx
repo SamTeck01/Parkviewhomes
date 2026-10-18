@@ -4,10 +4,10 @@ import { Building2, Users, ShieldCheck, Award } from "lucide-react";
 import heroImg from "@/assets/property-3.jpg";
 
 const values = [
-  { icon: Building2, title: "Curated Properties", desc: "Every shortlet is personally vetted for quality, comfort, and location before listing." },
-  { icon: ShieldCheck, title: "Verified & Secure", desc: "24/7 security, verified hosts, and transparent pricing with no hidden fees." },
-  { icon: Users, title: "Guest-First", desc: "Dedicated support team available around the clock to make your stay seamless." },
-  { icon: Award, title: "Premium Standards", desc: "Hotel-grade amenities in every property — from linens to Wi-Fi to fully stocked kitchens." },
+  { icon: Building2, title: "Quality developments", desc: "Every property we sell or let is vetted for build quality, title and location." },
+  { icon: ShieldCheck, title: "Transparent pricing", desc: "Clear prices and lease terms up front, with no hidden fees." },
+  { icon: Users, title: "Inspect before you buy", desc: "Book an inspection and our team will walk you through the property in person." },
+  { icon: Award, title: "Income from day one", desc: "Units are priced with their rental value, so investors know what they can earn." },
 ];
 
 const AboutPage = () => {
@@ -17,14 +17,14 @@ const AboutPage = () => {
 
       {/* Hero */}
       <section className="relative h-[50vh] md:h-[60vh] flex items-end">
-        <img src={heroImg} alt="About Vemu Homes" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={heroImg} alt="About Parkview Realty" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
         <div className="relative z-10 section-pad pb-10 md:pb-16">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2 opacity-0 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Our Story
           </p>
           <h1 className="text-display text-4xl md:text-6xl text-primary-foreground opacity-0 animate-fade-up" style={{ animationDelay: "0.25s" }}>
-            About Vemu Homes
+            About Parkview Realty
           </h1>
         </div>
       </section>
@@ -32,24 +32,23 @@ const AboutPage = () => {
       {/* Mission */}
       <section className="section-pad py-16 md:py-24 max-w-3xl">
         <h2 className="text-display text-2xl md:text-3xl mb-6">
-          Redefining short stays in Lagos
+          Helping people own, lease and stay in Lagos
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-4">
-          Vemu Homes was born from a simple belief: everyone deserves a beautiful, comfortable place to stay — 
-          whether you're in Lagos for a week-long business trip, a family reunion, or a weekend escape. 
-          We bridge the gap between impersonal hotels and unreliable short-term rentals.
+          Parkview Realty Ltd helps families and investors buy and lease quality homes in Lagos, with honest prices 
+          and properties you can inspect before you commit. Alongside our sales, we run fully serviced shortlets 
+          for guests who need a comfortable place for a few nights or a few weeks.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Our team hand-picks every property, ensuring they meet our exacting standards for cleanliness, 
-          design, location, and amenities. From cozy studios in Ikeja to sprawling villas on Banana Island, 
-          we offer a range of spaces tailored to every traveler's needs and budget.
+          Every development we sell, like Crystal Residence in Ilaje, Bariga, comes with clear unit prices, the rental 
+          value each unit can earn, and the features that matter: prepaid meters, parking, balconies and fitted kitchens.
         </p>
       </section>
 
       {/* Values */}
       <section className="section-pad py-16 md:py-24 bg-secondary noise-bg">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">Why Vemu</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">Why Parkview</p>
           <h2 className="text-display text-2xl md:text-4xl mb-12">What sets us apart</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
             {values.map((v, i) => (

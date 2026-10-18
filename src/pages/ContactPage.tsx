@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { brand } from "@/data/brand";
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -28,7 +29,7 @@ const ContactPage = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">Get in Touch</p>
             <h1 className="text-display text-3xl md:text-5xl mb-3">Contact Us</h1>
             <p className="text-muted-foreground text-sm max-w-lg">
-              Have a question about a shortlet, need help with a booking, or want to partner with us? We'd love to hear from you.
+              Ask about a property, a shortlet or an inspection, and our team will get back to you.
             </p>
           </div>
 
@@ -62,7 +63,7 @@ const ContactPage = () => {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="Booking inquiry, partnership, general question..." required />
+                    <Input id="subject" placeholder="Property enquiry, shortlet booking, inspection..." required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
@@ -78,10 +79,10 @@ const ContactPage = () => {
             {/* Info sidebar */}
             <div className="space-y-6">
               {[
-                { icon: Mail, label: "Email", value: "hello@vemuhomes.com" },
-                { icon: Phone, label: "Phone", value: "+234 801 234 5678" },
-                { icon: MapPin, label: "Office", value: "14 Admiralty Way, Lekki Phase 1, Lagos" },
-                { icon: Clock, label: "Hours", value: "Mon — Sat, 8AM — 8PM WAT" },
+                { icon: Mail, label: "Email", value: brand.email },
+                { icon: Phone, label: "Phone", value: brand.phones.join(", ") },
+                { icon: MapPin, label: "Office", value: brand.office },
+                { icon: Clock, label: "Hours", value: brand.hours },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center shrink-0">
@@ -97,8 +98,8 @@ const ContactPage = () => {
               <div className="pt-6 border-t border-border">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Follow Us</p>
                 <div className="flex gap-3">
-                  {["Instagram", "Twitter", "Facebook"].map((s) => (
-                    <a key={s} href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2">{s}</a>
+                  {(["Facebook", "Instagram", "LinkedIn", "YouTube"] as const).map((s) => (
+                    <a key={s} href={brand.socials[s.toLowerCase() as keyof typeof brand.socials]} className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2">{s}</a>
                   ))}
                 </div>
               </div>

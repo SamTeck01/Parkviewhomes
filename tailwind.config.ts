@@ -66,9 +66,10 @@ export default {
           sand: "hsl(var(--warm-sand))",
         },
         charcoal: "hsl(var(--charcoal))",
-        vemu: {
-          blue: "#001F60",
+        parkview: {
+          orange: "#F7841F",
           black: "#000000",
+          red: "#E3262F",
         },
         olive: "hsl(var(--olive))",
       },

@@ -15,7 +15,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { useToast } from "@/hooks/use-toast";
 import { format, differenceInDays, addDays } from "date-fns";
 import useEmblaCarousel from "embla-carousel-react";
-import logo from "@/assets/Vemo Homes logo.png";
+import Logo from "@/components/Logo";
 
 const amenityIcons: Record<string, React.ElementType> = {
   "High-speed WiFi": Wifi,
@@ -54,7 +54,7 @@ const reviewScores = [
 
 const mockReviews = [
   { name: "Sarah", date: "October 2025", text: "Absolutely stunning property. The interiors were immaculate, and the views were even better than the pictures. Would highly recommend this space for anyone looking for a premium stay." },
-  { name: "David & Emma", date: "September 2025", text: "Vemu Homes provided an exceptional experience. The check-in was seamless, and the concierge was always available to help us with local recommendations." },
+  { name: "David & Emma", date: "September 2025", text: "Parkview provided an exceptional experience. The check-in was seamless, and the concierge was always available to help us with local recommendations." },
   { name: "Michael", date: "August 2025", text: "Great location, incredibly fast WiFi which was perfect for remote working, and the kitchen was fully stocked with everything we needed." },
   { name: "Jessica", date: "July 2025", text: "We spent a full week here and didn't want to leave. The aesthetic is so beautiful and peaceful. The beds were extremely comfortable as well." }
 ];
@@ -369,11 +369,11 @@ const PropertyDetail = () => {
 
             <div className="border border-border rounded-lg p-5 flex items-center gap-4 bg-card">
               <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white border border-border shrink-0">
-                 <img src={logo} alt="Vemu Homes Logo" className="w-full h-full object-cover p-1" />
+                 <Logo markOnly className="p-1" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Property managed by</p>
-                <p className="text-sm font-bold flex items-center gap-1.5">Vemu Homes <span className="text-accent">★</span></p>
+                <p className="text-sm font-bold flex items-center gap-1.5">Parkview Realty <span className="text-accent">★</span></p>
               </div>
               <Link to="/contact" className="btn-primary text-xs py-2 px-4 rounded-md whitespace-nowrap">Contact</Link>
             </div>
