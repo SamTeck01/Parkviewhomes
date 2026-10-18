@@ -182,7 +182,7 @@ const BookingConfirmation = () => {
 
             <div className="pt-6">
                <p className="text-[11px] text-muted-foreground leading-relaxed mb-8">
-                  By selecting the button below, I agree to the <span className="underline font-semibold cursor-pointer">Host's House Rules</span>, <span className="underline font-semibold cursor-pointer">Ground rules for guests</span>, <span className="underline font-semibold cursor-pointer">Rebooking and Refund Policy</span>, and that Vemu Homes can charge my payment method if I'm responsible for damage.
+                  By selecting the button below, I agree to the <span className="underline font-semibold cursor-pointer">Host's House Rules</span>, <span className="underline font-semibold cursor-pointer">Ground rules for guests</span>, <span className="underline font-semibold cursor-pointer">Rebooking and Refund Policy</span>, and that Parkview Realty can charge my payment method if I'm responsible for damage.
                </p>
                <Button 
                 onClick={handlePay}
@@ -224,7 +224,7 @@ const BookingConfirmation = () => {
                       <span>₦15,000</span>
                    </div>
                    <div className="flex justify-between text-[15px]">
-                      <span className="text-muted-foreground">Vemu service fee</span>
+                      <span className="text-muted-foreground">Parkview service fee</span>
                       <span>{formatPrice(Math.round(Number(total) * 0.08))}</span>
                    </div>
                 </div>
@@ -239,7 +239,7 @@ const BookingConfirmation = () => {
                 <div className="bg-muted/30 rounded-xl p-4 flex gap-4">
                    <ShieldCheck size={24} className="text-accent shrink-0" />
                    <div>
-                      <p className="text-[13px] font-bold">Vemu Assurance</p>
+                      <p className="text-[13px] font-bold">Parkview Assurance</p>
                       <p className="text-[12px] text-muted-foreground leading-relaxed">Your payment is protected. If anything goes wrong, we'll help make it right.</p>
                    </div>
                 </div>

@@ -29,7 +29,7 @@ const Benefits = () => {
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
           <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">The Vemu Standard</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">The Parkview standard</p>
             <h2 className="text-display text-4xl md:text-5xl lg:text-[56px] leading-[1.05] tracking-tight">
               Designed for the modern traveler
             </h2>

@@ -79,15 +79,20 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-16">
           <div className="max-w-2xl">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-medium tracking-[-0.03em] leading-[1.05] mb-8 text-foreground opacity-0 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              Find the perfect<br />shortlet stay
+              Own, lease or stay<br />with Parkview
             </h1>
-            <button className="bg-foreground text-background px-8 py-3.5 text-sm font-medium hover:opacity-90 transition-opacity opacity-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              Check the shortlets out
-            </button>
+            <div className="flex flex-wrap gap-3 opacity-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              <button onClick={() => navigate("/products")} className="bg-accent text-accent-foreground px-8 py-3.5 text-sm font-semibold hover:opacity-90 transition-opacity">
+                See our products
+              </button>
+              <button onClick={() => navigate("/book-inspection")} className="border border-foreground text-foreground px-8 py-3.5 text-sm font-semibold hover:bg-foreground hover:text-background transition-colors">
+                Book an inspection
+              </button>
+            </div>
           </div>
           <div className="max-w-xs md:pb-4 opacity-0 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <p className="text-muted-foreground text-[15px] leading-relaxed">
-              Experience premium, fully serviced apartments with luxury amenities, beautifully tailored for your comfort, business, and leisure.
+              Parkview Realty Ltd sells and leases quality apartments across Lagos and runs fully serviced shortlets for short stays.
             </p>
           </div>
         </div>
@@ -110,10 +115,10 @@ const Hero = () => {
           {/* Header row side-by-side */}
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-[44px] font-medium tracking-tight leading-[1.1] max-w-lg text-foreground">
-              Discover top-tier shortlets tailored to you
+              Looking for a short stay? Find a shortlet
             </h2>
             <p className="text-muted-foreground text-[15px] max-w-[320px] leading-relaxed md:mt-2">
-              We curate premium spaces designed for productivity, harmony, and an absolutely unforgettable stay.
+              Fully serviced apartments for business trips, holidays and weekends, ready when you arrive.
             </p>
           </div>
 

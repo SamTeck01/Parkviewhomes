@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: "Olanrewaju Adeyemi",
     role: "Business Traveler",
-    text: "The Lekki Pearl Suite was exactly what I needed for my two-week business trip. Immaculate, fast Wi-Fi, and the 24/7 concierge was incredibly helpful. Vemu Homes has set a new standard for shortlets in Lagos.",
+    text: "The Lekki Pearl Suite was exactly what I needed for my two-week business trip. Immaculate, fast Wi-Fi, and the 24/7 concierge was incredibly helpful. Parkview has set a new standard for shortlets in Lagos.",
     rating: 5,
   },
   {
@@ -16,7 +16,7 @@ const testimonials = [
   {
     name: "Tunde Bakare",
     role: "Tech Entrepreneur",
-    text: "Vemu Homes is my go-to for short-term stays. The properties are always in prime locations and the interior design is world-class. It’s consistent, professional, and honestly better than most 5-star hotels.",
+    text: "Parkview is my go-to for short-term stays. The properties are always in prime locations and the interior design is world-class. It’s consistent, professional, and honestly better than most 5-star hotels.",
     rating: 5,
   },
 ];
